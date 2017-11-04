@@ -1,10 +1,9 @@
-﻿using System;
-using Microsoft.VisualStudio.TestTools.UnitTesting;
+﻿using Microsoft.VisualStudio.TestTools.UnitTesting;
 using TestStack.White.UIItems;
 using TestStack.White.UIItems.WindowItems;
-using System.IO;
 using TestStack.White;
 using TestStack.White.Factory;
+using System.Diagnostics;
 
 namespace UITesting
 {
@@ -55,9 +54,12 @@ namespace UITesting
         {
 
 
-            var applicationPath = Path.Combine("G:/ORT Course/Calc/WinF+WPF/WinF+WPF/WinF+WPF/bin/Debug", "WinF+WPF.exe");
-            application = Application.Launch(applicationPath);
-            window = application.GetWindow("Calc", InitializeOption.NoCache);
+            //var applicationPath = Path.Combine("G:/ORT Course/Calc/WinF+WPF/WinF+WPF/WinF+WPF/bin/Debug", "WinF+WPF.exe");
+            application = Application.Launch(new ProcessStartInfo(@"WinF+WPF.exe")
+            {
+                WorkingDirectory = @"..\..\..\WinF-WPF\WinF+WPF\bin\Debug\",
+            });
+            window = application.GetWindow("Form1", InitializeOption.NoCache);
         }
 
         [ClassCleanup]
