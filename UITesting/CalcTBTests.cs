@@ -4,6 +4,7 @@ using TestStack.White.UIItems.WindowItems;
 using System.IO;
 using TestStack.White;
 using TestStack.White.Factory;
+using System.Diagnostics;
 
 namespace UITesting
 {
@@ -17,8 +18,11 @@ namespace UITesting
         [ClassInitialize]
         public static void ClassInitialize(TestContext context)
         {
-            var applicationPath = Path.Combine("D:/ORT Course/Calc/WinF+WPF/WinF+WPF/CalcTb/bin/Debug", "CalcTb.exe");
-            application = Application.Launch(applicationPath);
+            //var applicationPath = Path.Combine("D:/ORT Course/Calc/WinF+WPF/WinF+WPF/CalcTb/bin/Debug", "CalcTb.exe");
+            application = Application.Launch(new ProcessStartInfo(@"CalcTb.exe")
+            {
+                WorkingDirectory = @"..\..\..\CalcTb\bin\Debug",
+            });
             window = application.GetWindow("Calc", InitializeOption.NoCache);
         }
 

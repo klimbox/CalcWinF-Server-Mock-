@@ -6,42 +6,7 @@ using TestStack.White.Factory;
 using System.Diagnostics;
 
 namespace UITesting
-{
-    //class PageObjects
-    //{
-    //    private Application application;
-    //    private static Window window;
-
-    //    public PageObjects()
-    //    {
-    //        var applicationPath = Path.Combine("G:/ORT Course/Calc/WinF+WPF/WinF+WPF/WinF+WPF/bin/Debug", "WinF+WPF.exe");
-    //        application = Application.Launch(applicationPath);
-    //        window = application.GetWindow("Calc", InitializeOption.NoCache);
-    //    }
-
-    //    public Button btNum1 = window.Get<Button>("btNum1");
-    //}
-
-    //[TestClass]
-    //public class CalcBtTestsPOM
-    //{
-    //    static PageObjects po;
-
-    //    [ClassInitialize]
-    //    public static void ClassInitialize(TestContext context)
-    //    {
-    //        po = new PageObjects();
-    //    }
-
-    //    [TestMethod]
-    //    public void TestButtonExists()
-    //    {
-    //        bool exist = po.btNum1.Visible;
-
-    //        Assert.IsTrue(exist);
-    //    }
-    //}
-
+{   
     [TestClass]
     public class CalcBtTests
     {
@@ -57,9 +22,9 @@ namespace UITesting
             //var applicationPath = Path.Combine("G:/ORT Course/Calc/WinF+WPF/WinF+WPF/WinF+WPF/bin/Debug", "WinF+WPF.exe");
             application = Application.Launch(new ProcessStartInfo(@"WinF+WPF.exe")
             {
-                WorkingDirectory = @"..\..\..\WinF-WPF\WinF+WPF\bin\Debug\",
+                WorkingDirectory = @"..\..\..\WinF-WPF\WinF+WPF\bin\Debug",
             });
-            window = application.GetWindow("Form1", InitializeOption.NoCache);
+            window = application.GetWindow("Calc", InitializeOption.NoCache);
         }
 
         [ClassCleanup]
