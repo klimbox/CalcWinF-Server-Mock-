@@ -57,9 +57,9 @@
   <ItemGroup>
     <Compile Include="CalcBtTests.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="CalcTBTests.cs" />
-    <Compile Include="CalcWPFTests.cs" />
-    <Compile Include="CalcTbWPFTests.cs" />
+    <None Include="CalcTBTests.cs" />
+    <None Include="CalcWPFTests.cs" />
+    <None Include="CalcTbWPFTests.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="app.config" />
