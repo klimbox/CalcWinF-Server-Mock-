@@ -48,7 +48,7 @@ namespace CountFromString
                 a = Convert.ToInt32(str[0]);
                 b = Convert.ToInt32(str[2]);
                 o = Convert.ToChar(str[1]);
-                res = Operation(a, b, o);
+                res = CountPHPServer.CalculationRequest(a, b, str[1]);
             }
             catch (Exception)
             {
@@ -68,7 +68,7 @@ namespace CountFromString
                 a = Convert.ToInt32(sa);
                 b = Convert.ToInt32(sb);
                 o = Convert.ToChar(operation);
-                res = Operation(a, b, o);
+                res = CountPHPServer.CalculationRequest(a, b, operation);
             }
             catch (Exception)
             {
