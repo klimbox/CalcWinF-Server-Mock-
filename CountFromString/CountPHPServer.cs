@@ -6,7 +6,7 @@ namespace CountFromString
 {
     public class CountPHPServer
     {
-        private static string url = "http://localhost/Calcs/count.php";
+        private static string url = "http://localhost/ForSelenium/count.php";
 
         public static int CalculationRequest(int num1, int num2, string op)
         {
