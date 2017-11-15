@@ -6,7 +6,7 @@ namespace CountFromString.Tests
     [TestClass()]
     public class CountFromStringTests
     {
-        private ICalculation c = new LocalCalculation();
+        private ICalculation c = new ServerCalculation();
        
         [DataTestMethod]
         [DataRow("1", "2", "+", 3)]

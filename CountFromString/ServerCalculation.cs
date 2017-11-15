@@ -12,7 +12,7 @@ namespace CountFromString
     public class ServerCalculation : ICalculation
     {
         private HttpClient _client;
-        private string _deffaultUrl = "http://localhost:8080";
+        private string _deffaultUrl = "http://localhost:9999";
 
         public ServerCalculation()
         {
@@ -29,9 +29,6 @@ namespace CountFromString
         public int Calculate(string num1, string num2, string op)
         {
             int res = 0;
-
-            if (op == "+")
-                op = "%2b";
 
             var content = new StringContent("num1=" + num1 + "&num2=" + num2 + "&opr=" + op);
 
