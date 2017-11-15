@@ -6,9 +6,9 @@ using System.Threading.Tasks;
 
 namespace CountFromString
 {
-    public class CountFromString
+    public class LocalCalculation : ICalculation
     {
-        public static int Operation(int a, int b, char o)
+        private int Operation(int a, int b, char o)
         {
             if (!(o == '+' || o == '-' || o == '/' || o == '*'))
                 throw new ArgumentException();
@@ -35,40 +35,19 @@ namespace CountFromString
             return res;
         }
 
-
-        public static int Input(string s)
+        public int Calculate(string num1, string num2, string op)
         {
-            string[] str = s.Split(' ');
+
             int a, b;
             char o;
             int res = 0;
 
             try
             {
-                a = Convert.ToInt32(str[0]);
-                b = Convert.ToInt32(str[2]);
-                o = Convert.ToChar(str[1]);
-                res = CountPHPServer.CalculationRequest(a, b, str[1]);
-            }
-            catch (Exception)
-            {
-                throw new ArgumentException();
-            }
-            return res;
-        }
-
-        public static int Input(string sa, string sb, string operation)
-        {
-            int a, b;
-            char o;
-            int res = 0;
-
-            try
-            {
-                a = Convert.ToInt32(sa);
-                b = Convert.ToInt32(sb);
-                o = Convert.ToChar(operation);
-                res = CountPHPServer.CalculationRequest(a, b, operation);
+                a = Convert.ToInt32(num1);
+                b = Convert.ToInt32(num2);
+                o = Convert.ToChar(op);
+                res = Operation(a, b, o);
             }
             catch (Exception)
             {

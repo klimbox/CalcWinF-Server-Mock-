@@ -1,4 +1,5 @@
-﻿using System;
+﻿using CountFromString;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -12,6 +13,8 @@ namespace WinF_WPF
 {
     public partial class FormCalc : Form
     {
+        private ICalculation c;
+
         public FormCalc()
         {
             InitializeComponent();
@@ -36,10 +39,12 @@ namespace WinF_WPF
 
         private void btCount_Click(object sender, EventArgs e)
         {
+            c = new LocalCalculation();
             int res = 0;
             try
             {
-                res = CountFromString.CountFromString.Input(tbScreen.Text);
+                string[] inp = tbScreen.Text.Split(' ');
+                res = c.Calculate(inp[0], inp[2], inp[1]);
             }
             catch(Exception)
             {
